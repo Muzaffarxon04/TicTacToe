@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './tictac.css'
 const TicTacToe = () => {
     const [turn, setTurn] = useState('x');
     const [cells, setCells] = useState(Array(9).fill(''))
     const [winner, setWinner] = useState();
+
+    console.log("turn: " + turn);
+    console.log("cells: " + cells);
+    console.log("cells: " + cells.length);
+    console.log("winner: " + winner);
     const checkForWinner = (squares) => {
         let combos = {
             across: [
@@ -22,6 +27,8 @@ const TicTacToe = () => {
 
             ],
         };
+
+
 
         for (let combo in combos) {
             combos[combo].forEach((pattern) => {
@@ -69,7 +76,7 @@ const TicTacToe = () => {
         setCells(Array(9).fill(''));
     }
     const Cell = ({ num }) => {
-        return <td onClick={() => handeClick(num)}>{cells[num]}</td>;
+        return <td onClick={(e) => handeClick(num)}>{cells[num]}</td>;
     };
     return [
         <div>
@@ -95,12 +102,21 @@ const TicTacToe = () => {
                         </tr>
                     </tbody>
                 </table>
-                {winner && (
+              
+              
+
+
+                {winner ? (
                     <>
                         <h2><b>{winner}</b> is the winner!</h2>
                         <button onClick={() => handleRestart()}>Play Again</button>
                         
                     </>
+                ) : (
+<>
+<button onClick={() => handleRestart()}>Returt</button>
+
+</>
                 )}
             </div>
         </div>

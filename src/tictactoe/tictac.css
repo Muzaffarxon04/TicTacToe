@@ -1,3 +1,8 @@
+body{
+    background: #FF0266;
+
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -7,14 +12,16 @@ justify-content: center;
 align-items: center;
 }
 table td {
-    background-color: teal;
+    height: 90px;
+    width: 90px;
+    border-radius: 30px;
+    background: #FF0266;
+    border: 5px solid #FFFFFF;
     text-align: center;
-    border: 5px solid green;
-    width: 100px;
-    height: 100px;
     cursor: pointer;
     line-height: 1px;
     font-size: 70px;
+    color: #FFFFFF;
 }
 h1{
     text-align: center;
